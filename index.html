@@ -92,7 +92,7 @@
 </head>
 <body>
   <div class="hero">
-    <video id="hero-video" autoplay muted playsinline>
+    <video id="hero-video" autoplay muted playsinline loop>
       <source src="video/hero.mp4" type="video/mp4" />
     </video>
     <div class="overlay"></div>
@@ -104,15 +104,7 @@
   </div>
 
   <script>
-    const video = document.getElementById('hero-video');
-
-    video.addEventListener('timeupdate', () => {
-      if (video.currentTime >= 15) {
-        video.currentTime = 0;
-      }
-    });
-
-    video.play().catch(() => {});
+    document.getElementById('hero-video').play().catch(() => {});
   </script>
 </body>
 </html>
